@@ -6,7 +6,9 @@ namespace JungleOverloading
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var randRestaurant = new Employee();
+            randRestaurant.Eat();
+            Console.ReadLine();
         }
     }
 }
