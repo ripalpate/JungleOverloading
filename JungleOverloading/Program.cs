@@ -8,21 +8,18 @@ namespace JungleOverloading
         static void Main(string[] args)
         {
             var randRestaurant = new Employee("Mary", "smith");
-            randRestaurant.Eat();
-            randRestaurant.Eat("salad");
-
-            //List<Employee> companions = new List<Employee>();
-            //companions.Add(randRestaurant);
-            //randRestaurant.Eat(randRestaurant.ListOfEmployees);
-            //Console.ReadLine();
-
             
             var employeeMary = new Employee("Mary", "Smith");
             randRestaurant.AddEmployees(employeeMary);
             var employeeBarny = new Employee("Barny", "White");
             randRestaurant.AddEmployees(employeeBarny);
+            var employeeGrace = new Employee("Grace", "Lee");
+            randRestaurant.AddEmployees(employeeGrace);
 
+            randRestaurant.Eat();
+            randRestaurant.Eat("salad");
             randRestaurant.Eat(randRestaurant.ListOfEmployees);
+            randRestaurant.Eat("dosa", randRestaurant.ListOfEmployees);
             Console.ReadLine();
         }
     }

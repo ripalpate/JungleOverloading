@@ -30,37 +30,53 @@ namespace JungleOverloading
             ListOfEmployees.Add(newEmployee);
         }
 
+        public string RandomRestaurant()
+        {
+            Random rand = new Random();
+            int randRestaurant = rand.Next(restaurants.Count);
+
+            return (restaurants[randRestaurant]);
+        }
+
         public void Eat()
         {
            
             Console.WriteLine($"Employee is at the {RandomRestaurant()}");
         }
-        public string RandomRestaurant()
-        {
-            Random rand = new Random();
-            int randRestaurant = rand.Next(restaurants.Count);
-           
-            return (restaurants[randRestaurant]);
-        }
+       
 
         public void Eat(string food)
         {
             Console.WriteLine($"{FirstName} ate {food} at the office");
         }
 
-        public void Eat(List<Employee> buddy)
+        public void Eat(List<Employee> companions)
         {
-            for (var i = 0; i < buddy.Count; i++)
+            for (var i = 0; i < companions.Count; i++)
             {
                 var j = 0;
-                if (i < buddy.Count-1) {
+                if (i < companions.Count-1)
+                {
                     j = i+1;
          
                 }
              
-                Console.WriteLine($"{buddy[i].FirstName} is at the {RandomRestaurant()} with {buddy[j].FirstName}" );
+                Console.WriteLine($"{companions[i].FirstName} is at the {RandomRestaurant()} with {companions[j].FirstName}" );
             }           
-     
+        }
+        public void Eat(string food, List<Employee> companions)
+        {
+            for (var i = 0; i < companions.Count; i++)
+            {
+                var j = 0;
+                if (i < companions.Count - 1)
+                {
+                    j = i + 1;
+
+                }
+
+                Console.WriteLine($"{companions[i].FirstName} is at the {RandomRestaurant()}  and ordered {food} with {companions[j].FirstName}");
+            }
         }
     }
 }
